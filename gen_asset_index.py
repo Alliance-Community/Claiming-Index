@@ -131,7 +131,7 @@ if __name__ == "__main__":
             for v2 in v:
                 if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
                     fac, veh = vehToFactionName(v2)
-                    lines.append("<li>{} <b>{}</b> ({})</li>".format(fac, veh, v2))
+                    lines.append("<li>{} <b>{}</b> ({}, {})</li>".format(fac, veh, v2, icon))
             lines.append("</ul>")
             lines.append("</td>")
             lines.append("</tr>")
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     for fac, name, veh, icon in sortedAssets:
         lines.append("<tr>")
         lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + icon + ".png"))
-        lines.append("<td>{} <b>{}</b> ({})</td>".format(fac, name, veh))
+        lines.append("<td>{} <b>{}</b> ({}, {})</td>".format(fac, name, veh, icon))
         lines.append("</tr>")
     
     lines.extend([
@@ -217,7 +217,7 @@ if __name__ == "__main__":
             lines.append("<table>")
         lines.append("<tr>")
         lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + icon + ".png"))
-        lines.append("<td>{} <b>{}</b> ({})</td>".format(fac, name, veh))
+        lines.append("<td>{} <b>{}</b> ({}, {})</td>".format(fac, name, veh, icon))
         lines.append("</tr>")
     
     lines.append("</table>")
