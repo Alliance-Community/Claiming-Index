@@ -94,6 +94,8 @@ if __name__ == "__main__":
         "<a href=\"icon-to-asset_index.html\">PR Icon-to-Assets Index (click here)</a>",
         "<h2>PR Assets-to-Icon Index</h2>",
         "<a href=\"asset-to-icon_index.html\">PR Assets-to-Icon Index (click here)</a>"
+        "<h2>PR Faction-Assets-to-Icon Index</h2>",
+        "<a href=\"faction-asset-to-icon_index.html\">PR Faction-Assets-to-Icon Index (click here)</a>"
     ])
     lines.extend(tail)
 
@@ -113,7 +115,8 @@ if __name__ == "__main__":
     lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
         "<h3>Sorted alphabetically by asset name (ignoring faction identifier in front).</h3>",
-        "<table>"
+        "<table>",
+        "<hr>",
     ])
     
     for k, v in icons_map.items():
@@ -155,6 +158,7 @@ if __name__ == "__main__":
     lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
         "<h3>Sorted alphabetically by asset name (ignoring faction identifier in front).</h3>",
+        "<hr>",
         "<table>"
     ])
     
@@ -167,20 +171,56 @@ if __name__ == "__main__":
                 if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
                     assets.append(vehToFactionName(v2) + (v2, k[len("mini_"):-len(".tga")],))
     
-    sorted = sorted(assets, key=lambda tup: tup[1])
+    sortedAssets = sorted(assets, key=lambda tup: tup[1])
 
-    for fac, name, veh, icon in sorted:
+    for fac, name, veh, icon in sortedAssets:
         lines.append("<tr>")
         lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + icon + ".png"))
-        lines.append("<td>")
-        lines.append("{} <b>{}</b> ({})".format(fac, name, veh))
-        lines.append("</td>")
+        lines.append("<td>{} <b>{}</b> ({})</td>".format(fac, name, veh))
         lines.append("</tr>")
     
     lines.extend([
         "",
         "</table>"
     ])
+    lines.extend(tail)
+    
+    with open(file, "w") as f:
+        f.writelines([l + "\n" for l in lines])
+        f.close()
+
+    # ########################################################################################
+    # Faction, Asset -> Icon Index
+    # ########################################################################################
+
+    file = os.path.join(os.path.curdir + "/faction-asset-to-icon_index.html")
+    print(file)
+    
+    lines = []
+    lines.extend(makeHead("PR Faction-Assets-to-Icon Index"))
+    lines.append("<a href=\"index.html\">Return to Index</a>")
+    lines.extend([
+        "<h3>Sorted alphabetically by factions and asset name.</h3>",
+    ])
+    
+    sortedAssets = sorted(assets, key=lambda tup: (tup[0], tup[1]))
+
+    fac0 = None
+
+    for fac, name, veh, icon in sortedAssets:
+        if fac0 != fac:
+            if fac0 != None:
+                lines.append("</table>")
+            fac0 = fac
+            lines.append("<hr>")
+            lines.append("<h2>{}</h2>".format(fac))
+            lines.append("<table>")
+        lines.append("<tr>")
+        lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + icon + ".png"))
+        lines.append("<td>{} <b>{}</b> ({})</td>".format(fac, name, veh))
+        lines.append("</tr>")
+    
+    lines.append("</table>")
     lines.extend(tail)
     
     with open(file, "w") as f:
