@@ -131,7 +131,7 @@ if __name__ == "__main__":
             for v2 in v:
                 if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
                     fac, veh = vehToFactionName(v2)
-                    lines.append("<li>{} <b>{}</b> ({}, {})</li>".format(fac, veh, v2, icon))
+                    lines.append("<li>{} <b>{}</b> ({})</li>".format(fac, veh, v2))
             lines.append("</ul>")
             lines.append("</td>")
             lines.append("</tr>")
