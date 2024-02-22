@@ -35,7 +35,6 @@ def makeHead(title):
         "<body>",
         "",
         "<h1>{}</h1>".format(title),
-        "<h2>Automatically generated at {} using a script by CAS_ual_TY</h2>".format(time.asctime()),
         "",
     ]
 
@@ -82,6 +81,27 @@ def vehToFactionName(veh):
 
 if __name__ == "__main__":
     # ########################################################################################
+    # index.html
+    # ########################################################################################
+    file = os.path.join(os.path.curdir + "/index.html")
+    print(file)
+
+    lines = []
+    lines.extend(makeHead("PR Assets Indexes"))
+    lines.extend([
+        "<h2>Automatically generated at {} using a script by CAS_ual_TY</h2>".format(time.asctime()),
+        "<h2>PR Icon-to-Assets Index</h2>",
+        "<a href=\"icon-to-asset_index.html\">PR Icon-to-Assets Index (click here)</a>",
+        "<h2>PR Assets-to-Icon Index</h2>",
+        "<a href=\"asset-to-icon_index.html\">PR Assets-to-Icon Index (click here)</a>"
+    ])
+    lines.extend(tail)
+
+    with open(file, "w") as f:
+        f.writelines([l + "\n" for l in lines])
+        f.close()
+
+    # ########################################################################################
     # Icon -> Asset Index
     # ########################################################################################
 
@@ -90,6 +110,7 @@ if __name__ == "__main__":
 
     lines = []
     lines.extend(makeHead("PR Icon-to-Assets Index"))
+    lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
         "<h3>Sorted alphabetically by asset name (ignoring faction identifier in front).</h3>",
         "<table>"
@@ -111,10 +132,12 @@ if __name__ == "__main__":
             lines.append("</ul>")
             lines.append("</td>")
             lines.append("</tr>")
+    
     lines.extend([
         "",
         "</table>"
     ])
+    
     lines.extend(tail)
     with open(file, "w") as f:
         f.writelines([l + "\n" for l in lines])
@@ -129,6 +152,7 @@ if __name__ == "__main__":
     
     lines = []
     lines.extend(makeHead("PR Assets-to-Icon Index"))
+    lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
         "<h3>Sorted alphabetically by asset name (ignoring faction identifier in front).</h3>",
         "<table>"
@@ -152,12 +176,13 @@ if __name__ == "__main__":
         lines.append("{} <b>{}</b> ({})".format(fac, name, veh))
         lines.append("</td>")
         lines.append("</tr>")
+    
     lines.extend([
         "",
         "</table>"
     ])
     lines.extend(tail)
+    
     with open(file, "w") as f:
         f.writelines([l + "\n" for l in lines])
         f.close()
-
