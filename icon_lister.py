@@ -23,11 +23,11 @@ menuIcons_list = []
 
 for f in os.listdir(minimap_icons_path):
     if not os.path.isdir(f) and f[-len(".tga"):] == ".tga":
-        icons_list.append(f)
+        icons_list.append(f.lower())
 
 for f in os.listdir(menuIcons_path):
     if not os.path.isdir(f) and f[-len(".tga"):] == ".tga":
-        menuIcons_list.append(f)
+        menuIcons_list.append(f.lower())
 
 icons_map = {}
 names_map = {}
@@ -99,7 +99,7 @@ for f1 in vehicles_subfolders:
                                             inconsistent_names.append(veh)
                             if icon == None:
                                 print("No mini_ icon found for: {}".format(veh))
-                            elif icon not in icons_list:
+                            elif icon.lower() not in icons_list:
                                 if icon not in missing_icons:
                                     missing_icons[icon] = []
                                 if veh not in missing_icons[icon]:
@@ -109,7 +109,7 @@ for f1 in vehicles_subfolders:
 
                             if menuIcon == None:
                                 print("No menuIcon_ icon found for: {}".format(veh))
-                            elif menuIcon not in menuIcons_list:
+                            elif menuIcon.lower() not in menuIcons_list:
                                 if menuIcon not in missing_menuIcons:
                                     missing_menuIcons[menuIcon] = []
                                 if veh not in missing_menuIcons[menuIcon]:
