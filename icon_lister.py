@@ -9,7 +9,7 @@ menuIcons_path = os.path.join(pr_repo, "menu/HUD/Texture/Ingame/Vehicles/Icons/H
 vehicles_path = "objects/vehicles/"
 vehicles_subfolders = ["Air", "civilian", "Land", "Sea"]
 
-factions = ["arg", "cf", "ch", "fr", "gb", "ger", "idf", "mec", "nl", "nva", "pl", "ru", "us", "civ", "fsa", "gb82", "mil"]
+factions = ["arg", "cf", "ch", "fr", "gb", "ger", "idf", "mec", "nl", "nva", "pl", "ru", "us", "civ", "fsa", "gb82", "mil", "boat"]
 
 prefix1 = "ObjectTemplate.vehicleHud.miniMapIcon Ingame\\Vehicles\\Icons\\Minimap\\"
 prefix2 = "ObjectTemplate.vehicleHud.typeIcon Ingame\\Vehicles\\Icons\\Hud\\MenuIcons\\"
@@ -56,7 +56,7 @@ for icon in icons_list:
 for f1 in vehicles_subfolders:
     cur_path = os.path.join(pr_repo, vehicles_path + f1)
     for f2 in os.listdir(cur_path):
-        if f2[0:2] in factions or f2[0:3] in factions:
+        if f2[0:2] in factions or f2[0:3] in factions or f2[0:4] in factions:
             vehicle = os.path.join(pr_repo, vehicles_path + f1 + "/" + f2)
             if os.path.isdir(vehicle):
                 for tweak in os.listdir(vehicle):

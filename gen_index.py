@@ -50,7 +50,8 @@ tail = [
 facTr = {
     "civ": "Civilian",
     "gb82": "GB",
-    "mil": "Militia"
+    "mil": "Militia",
+    "boat": "Generic"
 }
 
 def vehToFactionName(veh):
