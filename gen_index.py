@@ -93,12 +93,16 @@ if __name__ == "__main__":
     lines.extend(makeHead("PR Assets Indexes"))
     lines.extend([
         "<h2>Automatically generated at {} using a script by CAS_ual_TY</h2>".format(time.asctime()),
-        "<h2>PR Icon-to-Assets Index</h2>",
-        "<a href=\"icon-to-asset_index.html\">PR Icon-to-Assets Index (click here)</a>",
-        "<h2>PR Assets-to-Icon Index</h2>",
-        "<a href=\"asset-to-icon_index.html\">PR Assets-to-Icon Index (click here)</a>"
-        "<h2>PR Faction-Assets-to-Icon Index</h2>",
-        "<a href=\"faction-asset-to-icon_index.html\">PR Faction-Assets-to-Icon Index (click here)</a>"
+        "<h2>Vehicles</h2>",
+        "<ul>",
+        "<li><a href=\"icon-to-asset_index.html\">PR Icon-to-Assets Index (click here)</a></li>",
+        "<li><a href=\"asset-to-icon_index.html\">PR Assets-to-Icon Index (click here)</a></li>"
+        "<li><a href=\"faction-asset-to-icon_index.html\">PR Faction-Assets-to-Icon Index (click here)</a></li>",
+        "</ul>",
+        "<h2>Kits</h2>",
+        "<ul>",
+        "<li><a href=\"icon-to-kit_index.html\">PR Icon-to-Kit Index (click here)</a></li>",
+        "</ul>"
     ])
     lines.extend(tail)
 
@@ -203,7 +207,7 @@ if __name__ == "__main__":
     lines.extend(makeHead("PR Faction-Assets-to-Icon Index"))
     lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
-        "<h3>Sorted alphabetically by factions and asset name.</h3>",
+        "<h3>Sorted alphabetically by factions and asset name.</h3>"
     ])
     
     sortedAssets = sorted(assets, key=lambda tup: (tup[0], tup[1]))
@@ -222,6 +226,36 @@ if __name__ == "__main__":
         lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + icon + ".png"))
         lines.append("<td>{} <b>{}</b> ({}, {})</td>".format(fac, name, veh, icon))
         lines.append("</tr>")
+    
+    lines.append("</table>")
+    lines.extend(tail)
+    
+    with open(file, "w") as f:
+        f.writelines([l + "\n" for l in lines])
+        f.close()
+
+    # ########################################################################################
+    # Icon -> Kit Index
+    # ########################################################################################
+
+    file = os.path.join(os.path.curdir + "/icon-to-kit_index.html")
+    print(file)
+    
+    lines = []
+    lines.extend(makeHead("PR Icon-to-Kit Index"))
+    lines.append("<a href=\"index.html\">Return to Index</a>")
+    lines.extend([
+        "<h3>Sorted alphabetically by kit identifier.</h3>"
+        "<hr>",
+        "<table>"
+    ])
+    
+    for f in os.listdir(os.path.join(os.path.curdir + "/kits")):
+        if f[-len("_outline.png"):] == "_outline.png":
+            lines.append("<tr>")
+            lines.append("<td><img src=\"./kits/{}\"></td>".format(f))
+            lines.append("<td>{}</td>".format(f[:-len("_outline.png")]))
+            lines.append("</tr>")
     
     lines.append("</table>")
     lines.extend(tail)
