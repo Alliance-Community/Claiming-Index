@@ -127,7 +127,7 @@ if __name__ == "__main__":
         if k[:len("mini_")] == "mini_" and len(v) > 0:
             i = k[len("mini_"):-len(".tga")]
             lines.append("<tr>")
-            lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + i + ".png"))
+            lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + i + ".png"))
             lines.append("<td>")
             lines.append("<b>{}</b>:".format(i))
             lines.append("<ul>")
@@ -178,7 +178,7 @@ if __name__ == "__main__":
 
     for fac, name, veh, icon in sortedAssets:
         lines.append("<tr>")
-        lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + icon + ".png"))
+        lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + icon + ".png"))
         lines.append("<td>{} <b>{}</b> ({}, {})</td>".format(fac, name, veh, icon))
         lines.append("</tr>")
     
@@ -219,7 +219,7 @@ if __name__ == "__main__":
             lines.append("<h2>{}</h2>".format(fac))
             lines.append("<table>")
         lines.append("<tr>")
-        lines.append("<td><img src=\"./original_png/{}\"></td>".format("mini_" + icon + ".png"))
+        lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + icon + ".png"))
         lines.append("<td>{} <b>{}</b> ({}, {})</td>".format(fac, name, veh, icon))
         lines.append("</tr>")
     
