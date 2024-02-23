@@ -223,16 +223,16 @@ if __name__ == "__main__":
     for veh, icon, menuIcon, path in wrong_menuIcons:
         print("    {}: {} != {}".format(veh, icon, menuIcon))
 
-    print()
-    print()
+    #print()
+    #print()
 
-    print("Known Icons + Vehicles:")
-    for k, v in icons_map.items():
-        if len(v) > 0:
-            print("    {}".format(k))
-            for v2 in v:
-                if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
-                    print("        {}".format(v2))
+    #print("Known Icons + Vehicles:")
+    #for k, v in icons_map.items():
+        #if len(v) > 0:
+            #print("    {}".format(k))
+            #for v2 in v:
+                #if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
+                    #print("        {}".format(v2))
 
     print()
     print()
