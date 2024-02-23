@@ -4,7 +4,10 @@ import time
 ignore_list = [
     "us_air_c47_para",
     "civilianCar2",
-    "arg_jet_a1h_objective"
+    "arg_jet_a1h_objective",
+    "ru_ahe_ka29t",
+    "ru_ahe_mi8amtsh",
+    "ch_ahe_z9wa"
 ]
 
 def makeHead(title):
