@@ -67,6 +67,7 @@ span {
 <li>MEC <b>ZSU-23-4 Shilka</b> (mec_aav_shilka)</li>
 <li>NVA <b>ZSU-57-2</b> (nva_aav_zsu57)</li>
 <li>PL <b>ZSU-23-4 Shilka</b> (pl_aav_shilka)</li>
+<li>RU <b>M3A1 Halftrack M45</b> (ru_aav_m3)</li>
 <li>US <b>M3A1 Halftrack M45</b> (us_aav_m3)</li>
 </ul>
 </td>
@@ -309,12 +310,16 @@ span {
 <li>CH <b>ZSL-92A</b> (ch_apc_wz551a)</li>
 <li>FR <b>VAB VTT</b> (fr_apc_vab)</li>
 <li>GER <b>SdKfz 251C</b> (ger_apc_251c)</li>
+<li>GER <b>SdKfz 251C</b> (ger_apc_251c_1941)</li>
+<li>GER <b>SdKfz 251C</b> (ger_apc_251c_1941_alt)</li>
 <li>GER <b>SdKfz 251C</b> (ger_apc_251c_alt)</li>
 <li>GER <b>TPz Fuchs 1A8</b> (ger_apc_fuchs)</li>
 <li>IDF <b>M113</b> (idf_apc_m113)</li>
 <li>MEC <b>Boragh</b> (mec_apc_boragh)</li>
 <li>NL <b>YPR 765 PRI/I</b> (nl_apc_ypr50)</li>
 <li>NL <b>YPR 765 PRI/I GPMG</b> (nl_apc_ypr50_gpmg)</li>
+<li>RU <b>M3A1 Halftrack</b> (ru_apc_m3)</li>
+<li>RU <b>M3A1 Halftrack</b> (ru_apc_m3_alt)</li>
 <li>US <b>M113 ACAV</b> (us_apc_acav)</li>
 <li>US <b>M113</b> (us_apc_m113)</li>
 <li>US <b>M3A1 Halftrack</b> (us_apc_m3)</li>
@@ -496,6 +501,15 @@ span {
 </td>
 </tr>
 <tr>
+<td><img src="./vehicles/mini_jep_logi.png"></td>
+<td>
+<b>jep_logi</b>:
+<ul>
+<li>Militia <b>UAZ-3151 Logistics</b> (mil_jep_uaz_logistics)</li>
+</ul>
+</td>
+</tr>
+<tr>
 <td><img src="./vehicles/mini_jep_mg.png"></td>
 <td>
 <b>jep_mg</b>:
@@ -507,12 +521,14 @@ span {
 <li>IDF <b>HMMWV SIYUR</b> (idf_jep_hmmwv)</li>
 <li>MEC <b>AMZ DZIK-3</b> (mec_jep_dzik)</li>
 <li>MEC <b>UAZ-3151</b> (mec_jep_uaz_mg)</li>
+<li>Militia <b>UAZ-3151</b> (mil_jep_uaz_mg)</li>
 <li>NL <b>Land Rover Defender 110XD WW</b> (nl_jep_landrover)</li>
 <li>NVA <b>UAZ-469</b> (nva_jep_uaz_mg)</li>
 <li>PL <b>AMZ DZIK-3</b> (pl_jep_dzik)</li>
 <li>PL <b>M1151 Up-Armored HMMWV</b> (pl_jep_hmmwv_uparmored)</li>
 <li>PL <b>Honker Skorpion-3</b> (pl_jep_skorpion)</li>
 <li>RU <b>GAZ Tigr</b> (ru_jep_tigr_pkp)</li>
+<li>RU <b>Willys MB-2</b> (ru_jep_willysmb_mg)</li>
 <li>US <b>M1025 HMMWV</b> (us_jep_hmmwv)</li>
 <li>US <b>M1151 Up-Armored HMMWV</b> (us_jep_hmmwv_uparmored)</li>
 <li>US <b>M1151 Up-Armored HMMWV</b> (us_jep_hmmwv_uparmored_alt)</li>
@@ -573,11 +589,13 @@ span {
 <li>GER <b>Kubelwagen</b> (ger_jep_kubel)</li>
 <li>IDF <b>HMMWV SIYUR</b> (idf_jep_hmmwvopen)</li>
 <li>MEC <b>UAZ-3151 Support</b> (mec_jep_uaz)</li>
+<li>Militia <b>UAZ-3151 Support</b> (mil_jep_uaz)</li>
 <li>NL <b>Bushmaster PMV</b> (nl_jep_bushmaster)</li>
 <li>NL <b>Mercedes-Benz G280</b> (nl_jep_gwagon_support)</li>
 <li>NVA <b>UAZ-469 Support</b> (nva_jep_uaz)</li>
 <li>PL <b>Honker 2000</b> (pl_jep_honker)</li>
 <li>RU <b>GAZ Tigr Support</b> (ru_jep_tigr)</li>
+<li>RU <b>Willys MB-2 Support</b> (ru_jep_willysmb)</li>
 <li>US <b>M1038A1 HMMWV</b> (us_jep_hmmwv_support)</li>
 <li>US <b>M151A2 Support</b> (us_jep_m151a2_support)</li>
 <li>US <b>Willys MB-2 Support</b> (us_jep_willysmb)</li>
@@ -742,7 +760,11 @@ span {
 <li>ARG <b>A-1H Skyraider</b> (arg_jet_a1h)</li>
 <li>GER <b>Messerschmitt Bf-109</b> (ger_jet_bf109g6)</li>
 <li>GER <b>Ju-87B Stuka</b> (ger_jet_ju87b)</li>
+<li>RU <b>I-16</b> (ru_jet_i16)</li>
+<li>RU <b>IL-2</b> (ru_jet_il2)</li>
+<li>RU <b>LA5FN</b> (ru_jet_la5fn)</li>
 <li>US <b>A-1H Skyraider</b> (us_jet_a1h)</li>
+<li>US <b>P-47D Thunderbolt</b> (us_jet_p47d)</li>
 <li>US <b>P-51D Mustang</b> (us_jet_p51d)</li>
 </ul>
 </td>
@@ -770,6 +792,8 @@ span {
 <li>MEC <b>BRDM-2</b> (mec_jep_brdm2)</li>
 <li>PL <b>BRDM-2</b> (pl_jep_brdm2)</li>
 <li>PL <b>BRDM-2-M97 Zbik</b> (pl_jep_zbik)</li>
+<li>RU <b>BA-6</b> (ru_ifv_ba6)</li>
+<li>RU <b>BA-64</b> (ru_jep_ba64)</li>
 <li>RU <b>BRDM-2</b> (ru_jep_brdm2)</li>
 <li>RU <b>BRDM-2</b> (ru_jep_brdm2_alt)</li>
 </ul>
@@ -1071,6 +1095,9 @@ span {
 <li>FR <b>AMX-10RC</b> (fr_tnk_amx10rc)</li>
 <li>GER <b>Panzer III Ausf. J</b> (ger_tnk_p3j)</li>
 <li>GER <b>Stug III Ausf. B</b> (ger_tnk_stug3b)</li>
+<li>RU <b>BT-7</b> (ru_tnk_bt7)</li>
+<li>RU <b>BT-7</b> (ru_tnk_bt7a)</li>
+<li>RU <b>T-34 mod.1940</b> (ru_tnk_t70)</li>
 <li>US <b>M10 tank destroyer</b> (us_tnk_m10)</li>
 <li>US <b>M67 Zippo</b> (us_tnk_m67)</li>
 </ul>
@@ -1084,10 +1111,14 @@ span {
 <li>FSA <b>T-62</b> (fsa_tnk_t62)</li>
 <li>GER <b>Panzer IV Ausf. D</b> (ger_tnk_p4d)</li>
 <li>GER <b>Panzer IV Ausf. F2</b> (ger_tnk_p4f2)</li>
+<li>GER <b>Panzer V Panther Ausf. A</b> (ger_tnk_panther_a)</li>
 <li>MEC <b>T-72M</b> (mec_tnk_t72)</li>
 <li>Militia <b>T-62</b> (mil_tnk_t62)</li>
 <li>NVA <b>PT-76</b> (nva_tnk_pt76)</li>
 <li>PL <b>T-72M</b> (pl_tnk_t72)</li>
+<li>RU <b>T-26</b> (ru_tnk_t26)</li>
+<li>RU <b>T-34 mod.1941</b> (ru_tnk_t34)</li>
+<li>RU <b>T-34-85</b> (ru_tnk_t34_85)</li>
 <li>US <b>M48A1 Patton</b> (us_tnk_m48a1)</li>
 <li>US <b>M4A3 75mm</b> (us_tnk_m4a3_75mm)</li>
 <li>US <b>M4A3 75mm DWG</b> (us_tnk_m4a3_75mm_dwg)</li>
@@ -1126,6 +1157,7 @@ span {
 <li>PL <b>Star 1466 Logistics</b> (pl_trk_logistics)</li>
 <li>RU <b>KamAZ-5350</b> (ru_trk_kamaz_logistics)</li>
 <li>RU <b>Ural-4320 Logistics</b> (ru_trk_logistics)</li>
+<li>RU <b>ZIS-5V</b> (ru_trk_logistics_ww2)</li>
 <li>US <b>M35 Logistics</b> (us_trk_logistics)</li>
 <li>US <b>GMC CCKW Logistics</b> (us_trk_logistics_ww2)</li>
 </ul>
@@ -1162,6 +1194,7 @@ span {
 <li>PL <b>Star 944 Support</b> (pl_trk_support)</li>
 <li>RU <b>KamAZ-4350</b> (ru_trk_kamaz_support)</li>
 <li>RU <b>Ural-4320</b> (ru_trk_support)</li>
+<li>RU <b>ZIS-5V</b> (ru_trk_support_ww2)</li>
 <li>US <b>M35 2.5 Ton</b> (us_trk_m35)</li>
 <li>US <b>M35 2.5 Ton</b> (us_trk_support)</li>
 <li>US <b>GMC CCKW</b> (us_trk_support_ww2)</li>
