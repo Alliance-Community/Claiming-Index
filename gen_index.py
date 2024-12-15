@@ -303,7 +303,6 @@ if __name__ == "__main__":
     lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
         "<h3>Sorted alphabetically by asset name.</h3>",
-        "<hr>",
         "<table>"
         "<tr><td>Asset Name</td><td>Vehicle Icon</td><td>Squad Name</td></tr>"
     ])
