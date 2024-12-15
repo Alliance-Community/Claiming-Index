@@ -341,8 +341,6 @@ if __name__ == "__main__":
         lines.append("<td><b>{}</b></td>".format(squad))
         lines.append("</tr>")
         t = getVehicleType(veh)
-        if icon == "trk_aa":
-            print("{} {} {} {}".format(veh, t, claimingTypeDict[squad], reverseClaiming.get(t, "None")))
         if squad is not reverseClaiming.get(t, "None"):
             if squad == "APC + TANK" or squad == "APC + TANK + CAS":
                 if t == VEHICLE_TYPE_UNKNOWN:
@@ -354,13 +352,6 @@ if __name__ == "__main__":
                     print("{} ({}) should be in {} (custom type must be made) but is in {} (it is type {})".format(veh, icon, squad, reverseClaiming.get(t, "None"), t))
                 else:
                     print("{} ({}) should be in {} (containing types {}) but is in {} (it is type {})".format(veh, icon, squad, claimingTypeDict[squad], reverseClaiming.get(t, "None"), t))
-        #if len(claimingTypeDict[squad]) == 0:
-            #if t != VEHICLE_TYPE_UNKNOWN:
-                #print("{} ({}) should be in no squad but is in {} ({})".format(veh, icon, reverseClaiming.get(t, "None"), t))
-        #elif t in claimingTypeDict[squad]:
-            #pass
-        #else:
-            #print("{} ({}) should be in {} ({}) but is in {} ({})".format(veh, icon, squad, claimingTypeDict[squad], reverseClaiming.get(t, "None"), t))
             
     
     lines.extend([
