@@ -88,9 +88,11 @@ claimingDict = {
   "TANK": [["tnk_light", "tnk_medium", "tnk_heavy"]],
   "SPG": [["tec_spg"]],
   "ROCKET": [["tec_rocket"]],
-  "AAV": [["aav_light", "aav_medium", "aav_heavy"]],
-  "TRANS / TRANSPORT": [["the_scout", "the_scout_escort"], ["the_light", "the_light_escort"], ["the_medium", "the_medium_escort"], ["the_heavy", "the_heavy_chinook"], ["the_heavy_osprey"]],
-  "CAS": [["jet_1_attack", "jet_1_strikefighter", "jet_1_asf"], ["jet_2_attack", "jet_2_strikefighter", "jet_2_asf"], ["jet_4_attack", "jet_4_strikefighter", "jet_4_asf"], ["jet_6_attack", "jet_7_attack", "jet_8_attack"], ["jet_10_attack", "jet_10_strikefighter", "jet_10_asf", "jet_10_as"], ["jet_9_attack", "jet_9_strikefighter", "jet_9_asf"], ["jet_11_attack"]],
+  "AAV": [["trk_aa"]],
+  "TRANS": [["the_scout", "the_scout_escort"], ["the_light", "the_light_escort"], ["the_medium", "the_medium_escort"], ["the_heavy", "the_heavy_chinook"], ["the_heavy_osprey"]],
+  "CAS": [["jet_1_attack", "jet_1_strikefighter", "jet_1_asf"], ["jet_2_attack", "jet_2_strikefighter", "jet_2_asf", "jet_2_antiship"], ["jet_4_attack", "jet_4_strikefighter", "jet_4_asf"], ["jet_6_attack", "jet_7_attack", "jet_8_attack"], ["jet_10_attack", "jet_10_strikefighter", "jet_10_asf", "jet_10_as"], ["jet_9_attack", "jet_9_strikefighter", "jet_9_asf"], ["jet_11_attack"]],
+  "APC + TANK": [["atm_medium", "jep_atgm"]],
+  "APC + TANK + CAS": [["aav_light", "aav_medium", "aav_heavy"], ["jep_aa"]],
 }
 
 def vehToFactionName(veh):
@@ -155,9 +157,10 @@ if __name__ == "__main__":
     lines.extend(makeHead("Alliance Squad-to-Icon Index"))
     lines.append("<a href=\"index.html\">Return to Index</a>")
     lines.extend([
-        "<h3>Sorted alphabetically by asset name (ignoring faction identifier in front).</h3>",
+        "<h3>Claims of vehicle asset squads by vehicle icon.</h3>",
         "<table>",
         "<tbody>",
+        "<tr><td>Squad Name</td><td>Claims</td></tr>"
     ])
     
     for squad, list in claimingDict.items():
