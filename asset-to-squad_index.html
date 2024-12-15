@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alliance Asset-to-Squad Index</title>
+<style>
+html {    font: 1rem/1.5 Arial, sans-serif;
+    background: lightgray;
+}
+div.outer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.inner {
+    display: inline-block;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    height: 64px;
+    text-align: center;
+}
+table {
+    display: table;
+    width: 100%;
+    text-align: left;
+}
+td {
+    border: 1px solid black;
+    vertical-align: center;
+    padding: 8px;
+    text-align: center;
+}
+span {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="outer">
+<div class="inner">
+
+<h1>Alliance Asset-to-Squad Index</h1>
+
+<a href="index.html">Return to Index</a>
+<h3>Sorted alphabetically by asset name.</h3>
+<hr>
+<table><tr><td>Asset Name</td><td>Vehicle Icon</td><td>Squad Name</td></tr>
+<tr>
+<td><img src="./vehicles/mini_aav_heavy.png"></td>
+<td><b>9K22 Tunguska</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_medium.png"></td>
+<td><b>9K31 Gaskin</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_medium.png"></td>
+<td><b>9K35 Gopher</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_atm_medium.png"></td>
+<td><b>9P148 Spandrel</b></td>
+<td><b>APC + TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_atm_medium.png"></td>
+<td><b>9P149 Shturm-S</b></td>
+<td><b>APC + TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_7_attack.png"></td>
+<td><b>A-10A Thunderbolt II</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_11_attack.png"></td>
+<td><b>A-1H Skyraider</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_9_attack.png"></td>
+<td><b>A-1H Skyraider</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>A-4B Skyhawk</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>A-4C Skyhawk</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_strikefighter.png"></td>
+<td><b>A-4Q Skyhawk</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_light.png"></td>
+<td><b>AMX-10RC</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>AMX-56 Leclerc</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jep_aa.png"></td>
+<td><b>AN/TWQ-1 Avenger</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>AS565 MB Panther</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_strikefighter.png"></td>
+<td><b>AV-8B Harrier II+</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_strikefighter.png"></td>
+<td><b>AV-8B Harrier II+ CAS</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_heavy.png"></td>
+<td><b>BA-6</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_light.png"></td>
+<td><b>BA-64</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_light.png"></td>
+<td><b>BMP-1</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>BMP-2</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_medium.png"></td>
+<td><b>BMP-2</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_medium.png"></td>
+<td><b>BMP-2M</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_heavy.png"></td>
+<td><b>BMP-3</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_heavy.png"></td>
+<td><b>BMP-3M</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_light.png"></td>
+<td><b>BRDM-2</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_light.png"></td>
+<td><b>BRDM-2-M97 Zbik</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_light.png"></td>
+<td><b>BT-7</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_light.png"></td>
+<td><b>BTR-60PB</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_medium.png"></td>
+<td><b>BTR-80</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>BTR-80A</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>BTR-82AM</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_light.png"></td>
+<td><b>BWP-1</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>Bell UH-1D</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>CF-188A Hornet</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_attack.png"></td>
+<td><b>CF-188A Hornet CAS</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>CH-135 Twin Huey</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>CH-146 Griffon</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light_escort.png"></td>
+<td><b>CH-146 Griffon CAS</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_chinook.png"></td>
+<td><b>CH-147 Chinook</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_chinook.png"></td>
+<td><b>CH-147F Chinook</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_chinook.png"></td>
+<td><b>CH-47D Chinook</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>CV9035NL</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_chinook.png"></td>
+<td><b>Chinook CH-47C</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_chinook.png"></td>
+<td><b>Chinook HC.4</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_chinook.png"></td>
+<td><b>Chinook HC1</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_heavy.png"></td>
+<td><b>Coyote Recon Vehicle</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>Eurofighter Typhoon</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_6_attack.png"></td>
+<td><b>F-15E Strike Eagle</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_6_attack.png"></td>
+<td><b>F-15I Ra'am</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>F-16C Barak</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>F-16C Fighting Falcon</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_attack.png"></td>
+<td><b>F-16C Fighting Falcon CAS</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>F/A-18C Hornet</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_medium.png"></td>
+<td><b>FV 107 Scimitar</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_medium.png"></td>
+<td><b>FV 510 Warrior</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_medium_scorpion.png"></td>
+<td><b>FV101 Scorpion</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>FV4034 Challenger 2</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jep_aa.png"></td>
+<td><b>Fennek SWP</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_scout.png"></td>
+<td><b>Gazelle AH.1</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>H-34 Choctaw</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>Harrier GR.3 CAS GPB</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>Harrier GR.3 CAS LGB</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>Harrier GR.3 CAS Rockets</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_strikefighter.png"></td>
+<td><b>Harrier GR.9</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_asf.png"></td>
+<td><b>Harrier GR.9 ASF</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_9_strikefighter.png"></td>
+<td><b>I-16</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_2_strikefighter.png"></td>
+<td><b>IAI Dagger A</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_2_attack.png"></td>
+<td><b>IAI Dagger A CAS</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_11_attack.png"></td>
+<td><b>IL-2</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>J-10 Firebird</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_11_attack.png"></td>
+<td><b>Ju-87B Stuka</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>KA-29</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium_escort.png"></td>
+<td><b>KA-29</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>KTO Rosomak</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_9_asf.png"></td>
+<td><b>LA5FN</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>LAV-25</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>LAV-3</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>Leopard 2A4</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>Leopard 2A6</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>Lynx AH.7</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>Lynx AH.9A</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light_escort.png"></td>
+<td><b>Lynx AH.9A</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_light.png"></td>
+<td><b>M10 tank destroyer</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jep_atgm.png"></td>
+<td><b>M1045A1 HMMWV TOW</b></td>
+<td><b>APC + TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jep_atgm.png"></td>
+<td><b>M1167 HMMWV Up-Armored TOW</b></td>
+<td><b>APC + TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_light.png"></td>
+<td><b>M163 Vulcan</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>M1A1 Abrams</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>M1A1 Abrams TUSK</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>M1A2 Abrams</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>M1A2 Abrams TUSK</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_heavy.png"></td>
+<td><b>M2A2 Bradley ODS</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_light.png"></td>
+<td><b>M3A1 Halftrack M45</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>M48A1 Patton</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>M4A3 75mm</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>M4A3 75mm DWG</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_light.png"></td>
+<td><b>M67 Zippo</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_heavy.png"></td>
+<td><b>M8 Greyhound</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_scout.png"></td>
+<td><b>MH-6 Littlebird</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>MH-60L Blackhawk</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>MI-171 SH</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>MT-LB 6MB</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy_osprey.png"></td>
+<td><b>MV-22 Osprey</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>Merkava Mark IV</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>Merlin HC3</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_9_strikefighter.png"></td>
+<td><b>Messerschmitt Bf-109</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>Mi-17 Hip-H</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>Mi-8 AMTSh</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>Mi-8MT Hip-C</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_2_strikefighter.png"></td>
+<td><b>MiG-21 Fishbed</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_2_strikefighter.png"></td>
+<td><b>MiG-21MF Fishbed</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>MiG-29 Fulcrum</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>MiG-29S Fulcrum</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_asf.png"></td>
+<td><b>MiG-29S Fulcrum ASF</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_2_asf.png"></td>
+<td><b>Mirage IIIEA</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_2_antiship.png"></td>
+<td><b>Mirage IIIEA AS</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>NH90 NFH</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>NH90 TTH</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_trk_aa.png"></td>
+<td><b>Opel Blitz Flak 38</b></td>
+<td><b>AAV</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_9_strikefighter.png"></td>
+<td><b>P-47D Thunderbolt</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_11_attack.png"></td>
+<td><b>P-51D Mustang</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_heavy.png"></td>
+<td><b>PGZ-04 SPAAG</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>PT-76</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>PT-91 Twardy</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_light.png"></td>
+<td><b>Panzer III Ausf. J</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>Panzer IV Ausf. D</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>Panzer IV Ausf. F2</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>Panzer V Panther Ausf. A</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>Panzer VI Tiger Ausf. E</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>Puma</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_heavy.png"></td>
+<td><b>Puma IFV</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>Q-5 Fantan</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tec_rocket.png"></td>
+<td><b>Rocket Technical</b></td>
+<td><b>ROCKET</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_scout.png"></td>
+<td><b>SOKO HO-42</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tec_spg.png"></td>
+<td><b>SPG-9 Technical</b></td>
+<td><b>SPG</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_light.png"></td>
+<td><b>SdKfz 231</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_light.png"></td>
+<td><b>SdKfz 233 Stummel</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_asf.png"></td>
+<td><b>Sea Harrier FRS.1 ASF</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>Sea Harrier FRS.1 CAS</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_medium.png"></td>
+<td><b>Stormer HVM</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_light.png"></td>
+<td><b>Stug III Ausf. B</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_4_attack.png"></td>
+<td><b>Su-22 Fitter</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_8_attack.png"></td>
+<td><b>Su-25 Frogfoot</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_strikefighter.png"></td>
+<td><b>Su-27SM Flanker-B</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_1_asf.png"></td>
+<td><b>Su-27SM Flanker-B ASF</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_6_attack.png"></td>
+<td><b>Su-30MKK Flanker-G</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_6_attack.png"></td>
+<td><b>Su-34 Fullback</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_jet_8_attack.png"></td>
+<td><b>Su-39 Frogfoot</b></td>
+<td><b>CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>T-34 mod.1941</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>T-34-85</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>T-62</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>T-72A</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>T-72B1</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_medium.png"></td>
+<td><b>T-72M</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>T-72S</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>T-72S1</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>T-90A</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>UH-1C Huey</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>UH-1D Huey</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>UH-1H Iroquois</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>UH-1N Twin Huey</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>UH-60L Blackhawk</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>UH-60L Yanshuf</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_trk_aa.png"></td>
+<td><b>Ural-4320 ZU-23-2</b></td>
+<td><b>AAV</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_medium.png"></td>
+<td><b>VBCI</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_rec_light.png"></td>
+<td><b>VN-3</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>W-3T Sokol</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_atm_medium.png"></td>
+<td><b>WZ550</b></td>
+<td><b>APC + TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_medium.png"></td>
+<td><b>Wessex HU.5</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_heavy.png"></td>
+<td><b>Z-8KA</b></td>
+<td><b>TRANS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_light.png"></td>
+<td><b>ZBD-86A</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_heavy.png"></td>
+<td><b>ZBL-08</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_heavy.png"></td>
+<td><b>ZBL-08</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_apc_medium.png"></td>
+<td><b>ZSL-92 25mm</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_ifv_medium.png"></td>
+<td><b>ZSL-92B 30mm</b></td>
+<td><b>APC</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_light.png"></td>
+<td><b>ZSU-23-4 Shilka</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_aav_light.png"></td>
+<td><b>ZSU-57-2</b></td>
+<td><b>APC + TANK + CAS</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>ZTZ-98</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_tnk_heavy.png"></td>
+<td><b>ZTZ-99 II</b></td>
+<td><b>TANK</b></td>
+</tr>
+<tr>
+<td><img src="./vehicles/mini_the_light.png"></td>
+<td><b>Zhi-9B</b></td>
+<td><b>TRANS</b></td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+</body>
+</html>

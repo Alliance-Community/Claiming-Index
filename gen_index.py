@@ -49,7 +49,7 @@ def makeHead(title):
         "}",
         "td {",
         "    border: 1px solid black;",
-        "    vertical-align: top;",
+        "    vertical-align: center;",
         "    padding: 8px;",
         "    text-align: center;",
         "}",
@@ -95,15 +95,8 @@ claimingDict = {
   "APC + TANK + CAS": [["aav_light", "aav_medium", "aav_heavy"], ["jep_aa"]],
 }
 
-def vehToFactionName(veh):
+def vehToName(veh):
     vehOrig = veh
-    fac = None
-    
-    for i in range(2, 5):
-        if veh[i] == "_":
-            fac = veh[:i]
-            break
-    
     if veh in names_map:
         veh = names_map[veh]
         if veh[0] == "\"":
@@ -112,17 +105,8 @@ def vehToFactionName(veh):
             veh = veh[:-1]
     else:
         print("No HUD name found for: {}".format(vehOrig))
-    
-    if fac == None:
-        print("Unknown faction: {}".format(vehOrig))
-        return veh
-    
-    if fac in facTr:
-        fac = facTr[fac]
-    else:
-        fac = fac.upper()
-    
-    return (fac, veh)
+
+    return veh
 
 if __name__ == "__main__":
     # ########################################################################################
@@ -137,7 +121,7 @@ if __name__ == "__main__":
         "<h2>Automatically generated at {} using a script by CAS_ual_TY</h2>".format(time.asctime()),
         "<h2>Vehicles</h2>",
         "<span><a href=\"squad-to-icon_index.html\">Squad-to-Icon Index (click here)</a></span>",
-        #"<span><a href=\"asset-to-icon_index.html\">PR Assets-to-Icon Index (click here)</a></span>"
+        "<span><a href=\"asset-to-squad_index.html\">Asset-to-Squad Index (click here)</a></span>"
         #"<span><a href=\"faction-asset-to-icon_index.html\">PR Faction-Assets-to-Icon Index (click here)</a></span>",
     ])
     lines.extend(tail)
@@ -164,10 +148,6 @@ if __name__ == "__main__":
     ])
     
     for squad, list in claimingDict.items():
-        #lines.append("<hr>")
-        #lines.append("<h2>{}</h2>".format(squad))
-        
-        #lines.append("<table>")
         lines.append("<tr>")
         
         lines.append("<td><b>{}</b></td>".format(squad))
@@ -186,6 +166,67 @@ if __name__ == "__main__":
     lines.append("</table>")
     
     lines.extend(tail)
+    with open(file, "w") as f:
+        f.writelines([l + "\n" for l in lines])
+        f.close()
+
+    # ########################################################################################
+    # Squad -> Icon
+    # ########################################################################################
+
+    file = os.path.join(os.path.curdir + "/asset-to-squad_index.html")
+    print(file)
+    
+    reverseMap = {}
+    
+    for squad, list in claimingDict.items():
+        for sub_list in list:
+            for icon in sub_list:
+                reverseMap[icon] = squad
+
+    lines = []
+    lines.extend(makeHead("Alliance Asset-to-Squad Index"))
+    lines.append("<a href=\"index.html\">Return to Index</a>")
+    lines.extend([
+        "<h3>Sorted alphabetically by asset name.</h3>",
+        "<hr>",
+        "<table>"
+        "<tr><td>Asset Name</td><td>Vehicle Icon</td><td>Squad Name</td></tr>"
+    ])
+    
+    assets = []
+    assetNames = []
+    
+    for k, v in icons_map.items():
+        v = [a for a in v if a not in ignore_list]
+        if k[:len("mini_")] == "mini_" and len(v) > 0:
+            for v2 in v:
+                if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
+                    name = vehToName(v2)
+                    icon = k[len("mini_"):-len(".tga")]
+                    key = name + "__" + icon
+                    if key not in assetNames:
+                        assets.append((name, v2, icon))
+                        assetNames.append(key)
+    
+    sortedAssets = sorted(assets, key=lambda tup: tup[0])
+
+    for name, veh, icon in sortedAssets:
+        if not icon in reverseMap:
+            continue
+        squad = reverseMap[icon]
+        lines.append("<tr>")
+        lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + icon + ".png"))
+        lines.append("<td><b>{}</b></td>".format(name))
+        lines.append("<td><b>{}</b></td>".format(squad))
+        lines.append("</tr>")
+    
+    lines.extend([
+        "",
+        "</table>"
+    ])
+    lines.extend(tail)
+    
     with open(file, "w") as f:
         f.writelines([l + "\n" for l in lines])
         f.close()
