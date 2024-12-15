@@ -304,7 +304,7 @@ if __name__ == "__main__":
     lines.extend([
         "<h3>Sorted alphabetically by asset name.</h3>",
         "<table>"
-        "<tr><td>Asset Name</td><td>Vehicle Icon</td><td>Squad Name</td></tr>"
+        "<tr><td>Vehicle Icon</td><td>Asset Name</td><td>Squad Name</td></tr>"
     ])
     
     assets = []
