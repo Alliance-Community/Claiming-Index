@@ -1,4 +1,5 @@
 from icon_lister import *
+from collections import OrderedDict
 import time
 
 ignore_list = [
@@ -108,6 +109,119 @@ def vehToName(veh):
 
     return veh
 
+
+VEHICLE_TYPE_UNKNOWN = 0
+VEHICLE_TYPE_ARMOR = 1
+VEHICLE_TYPE_AAV = VEHICLE_TYPE_UNKNOWN #82
+VEHICLE_TYPE_APC = 3
+VEHICLE_TYPE_IFV = 4
+VEHICLE_TYPE_JET = 5
+VEHICLE_TYPE_HELI = 6
+VEHICLE_TYPE_HELIATTACK = 7
+VEHICLE_TYPE_TRANSPORT = VEHICLE_TYPE_UNKNOWN #8
+VEHICLE_TYPE_RECON = 9
+VEHICLE_TYPE_STATIC = VEHICLE_TYPE_UNKNOWN #10
+VEHICLE_TYPE_SOLDIER = VEHICLE_TYPE_UNKNOWN #11
+VEHICLE_TYPE_ASSET = VEHICLE_TYPE_UNKNOWN #12
+VEHICLE_TYPE_SHIP = VEHICLE_TYPE_UNKNOWN #13
+VEHICLE_TYPE_TURBOPROP = 14
+VEHICLE_TYPE_AFV = VEHICLE_TYPE_UNKNOWN #15  # open top shitboxes Armoured Fighting Vehicle
+VEHICLE_TYPE_ALC = VEHICLE_TYPE_UNKNOWN #16  # Armoured Logistics Carrier
+VEHICLE_TYPE_UAV = VEHICLE_TYPE_UNKNOWN #17
+VEHICLE_TYPE_FREE = VEHICLE_TYPE_UNKNOWN #18  # recyclable vehicles that cost no tickets
+
+claimingTypeDict = {
+  "APC": [VEHICLE_TYPE_APC, VEHICLE_TYPE_IFV, VEHICLE_TYPE_RECON],
+  "TANK": [VEHICLE_TYPE_ARMOR],
+  "SPG": [],
+  "ROCKET": [],
+  "AAV": [],
+  "TRANS": [VEHICLE_TYPE_HELI],
+  "CAS": [VEHICLE_TYPE_JET, VEHICLE_TYPE_HELIATTACK, VEHICLE_TYPE_TURBOPROP],
+  "APC + TANK": [],
+  "APC + TANK + CAS": [],
+}
+
+vehicleTypeMap = OrderedDict(
+    [
+        ("cargoship_atlantic_conveyor", VEHICLE_TYPE_SHIP),
+        ("_fri_type21", VEHICLE_TYPE_SHIP),
+        ("_jet_a1h", VEHICLE_TYPE_TURBOPROP),
+        ("_jet_bf109g6", VEHICLE_TYPE_TURBOPROP),
+        ("_jet_p51d", VEHICLE_TYPE_TURBOPROP),
+        ("_jet_i16", VEHICLE_TYPE_TURBOPROP),
+        ("_jet_il2", VEHICLE_TYPE_TURBOPROP),
+        ("_jet_il2m", VEHICLE_TYPE_TURBOPROP),
+        ("_jet_la5fn", VEHICLE_TYPE_TURBOPROP),
+        ("_atm_technical", VEHICLE_TYPE_APC),
+        ("_apc_mtlb_30mm", VEHICLE_TYPE_APC),
+        ("_apc_fuchs", VEHICLE_TYPE_AFV),
+        ("_apc_mtlb", VEHICLE_TYPE_APC),
+        ("_apc_boragh", VEHICLE_TYPE_AFV),
+        ("_apc_m113", VEHICLE_TYPE_AFV),
+        ("_apc_m3", VEHICLE_TYPE_AFV),
+        ("_apc_m113_logistics", VEHICLE_TYPE_ALC),
+        ("_apc_mtplb", VEHICLE_TYPE_ALC),
+        ("_apc_acav", VEHICLE_TYPE_AFV),
+        ("_apc_ypr50", VEHICLE_TYPE_AFV),
+        ("_apc_vab", VEHICLE_TYPE_AFV),
+        ("_apc_wz551a", VEHICLE_TYPE_AFV),
+        ("_apc_251c", VEHICLE_TYPE_AFV),
+        ("_ifv_scimitar", VEHICLE_TYPE_APC),
+        ("_ifv_scorpion", VEHICLE_TYPE_APC),
+        ("_ifv_coyote", VEHICLE_TYPE_APC),
+        ("_jep_vn3", VEHICLE_TYPE_APC),
+        ("_jep_fennek", VEHICLE_TYPE_APC),
+        ("_shp_pbr", VEHICLE_TYPE_APC),
+        ("_tnk_", VEHICLE_TYPE_ARMOR),
+        ("_aav_", VEHICLE_TYPE_AAV),
+        ("_apc_", VEHICLE_TYPE_APC),
+        ("_ifv_", VEHICLE_TYPE_IFV),
+        ("_atm_", VEHICLE_TYPE_IFV),
+        ("_jet_", VEHICLE_TYPE_JET),
+        ("_the_", VEHICLE_TYPE_HELI),
+        ("_ahe_", VEHICLE_TYPE_HELIATTACK),
+        ("_jep_", VEHICLE_TYPE_TRANSPORT),
+        ("_jep_brdm2", VEHICLE_TYPE_TRANSPORT),
+        ("_trk_", VEHICLE_TYPE_TRANSPORT),
+        ("_civ_", VEHICLE_TYPE_TRANSPORT),
+        ("_bik_", VEHICLE_TYPE_TRANSPORT),
+        ("_shp_", VEHICLE_TYPE_TRANSPORT),
+        ("boat", VEHICLE_TYPE_FREE),
+        ("soldier", VEHICLE_TYPE_SOLDIER),
+        ("commandpost", VEHICLE_TYPE_ASSET),
+        ("rallypoint", VEHICLE_TYPE_ASSET),
+        ("firebase", VEHICLE_TYPE_ASSET),
+        ("bunker", VEHICLE_TYPE_ASSET),
+        ("hideout", VEHICLE_TYPE_ASSET),
+        ("acv", VEHICLE_TYPE_ASSET),
+        ("ru_ship_andreev_lpd_atc", VEHICLE_TYPE_ASSET),
+        ("deployable", VEHICLE_TYPE_STATIC),
+        ("ats", VEHICLE_TYPE_STATIC),
+        ("bipod", VEHICLE_TYPE_STATIC),
+        ("hmg", VEHICLE_TYPE_STATIC),
+        ("djigit", VEHICLE_TYPE_STATIC),
+        ("stinger", VEHICLE_TYPE_STATIC),
+        ("zis", VEHICLE_TYPE_STATIC),
+        ("zpu", VEHICLE_TYPE_STATIC),
+        ("uav", VEHICLE_TYPE_UAV), ]
+)
+
+_vehicleTypeCache = OrderedDict()
+
+def getVehicleType(templateName):
+    templateName = templateName.lower()
+    try:
+        return _vehicleTypeCache[templateName]
+    except KeyError:
+        for vtype in vehicleTypeMap:
+            if templateName.find(vtype) != -1:
+                _vehicleTypeCache[templateName] = vehicleTypeMap[vtype]
+                return vehicleTypeMap[vtype]
+        _vehicleTypeCache[templateName] = VEHICLE_TYPE_UNKNOWN
+        return VEHICLE_TYPE_UNKNOWN
+
+
 if __name__ == "__main__":
     # ########################################################################################
     # index.html
@@ -202,24 +316,52 @@ if __name__ == "__main__":
         if k[:len("mini_")] == "mini_" and len(v) > 0:
             for v2 in v:
                 if v2[-len(bf2):] != bf2 and v2[-len(prsp):] != prsp and v2[-len(sp):] != sp:
-                    name = vehToName(v2)
                     icon = k[len("mini_"):-len(".tga")]
-                    key = name + "__" + icon
+                    if not icon in reverseMap:
+                        continue
+                    name = vehToName(v2)
+                    key = (name, icon)
                     if key not in assetNames:
                         assets.append((name, v2, icon))
                         assetNames.append(key)
     
     sortedAssets = sorted(assets, key=lambda tup: tup[0])
+    
+    reverseClaiming = {}
+    
+    for squad, list in claimingTypeDict.items():
+        for l in list:
+            reverseClaiming[l] = squad
 
     for name, veh, icon in sortedAssets:
-        if not icon in reverseMap:
-            continue
         squad = reverseMap[icon]
         lines.append("<tr>")
         lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + icon + ".png"))
         lines.append("<td><b>{}</b></td>".format(name))
         lines.append("<td><b>{}</b></td>".format(squad))
         lines.append("</tr>")
+        t = getVehicleType(veh)
+        if icon == "trk_aa":
+            print("{} {} {} {}".format(veh, t, claimingTypeDict[squad], reverseClaiming.get(t, "None")))
+        if squad is not reverseClaiming.get(t, "None"):
+            if squad == "APC + TANK" or squad == "APC + TANK + CAS":
+                if t == VEHICLE_TYPE_UNKNOWN:
+                    pass
+                else:
+                    print("{} ({}) should be in no squad but is in {} ({})".format(veh, icon, reverseClaiming.get(t, "None"), t))
+            else:
+                if claimingTypeDict[squad] == []:
+                    print("{} ({}) should be in {} (custom type must be made) but is in {} (it is type {})".format(veh, icon, squad, reverseClaiming.get(t, "None"), t))
+                else:
+                    print("{} ({}) should be in {} (containing types {}) but is in {} (it is type {})".format(veh, icon, squad, claimingTypeDict[squad], reverseClaiming.get(t, "None"), t))
+        #if len(claimingTypeDict[squad]) == 0:
+            #if t != VEHICLE_TYPE_UNKNOWN:
+                #print("{} ({}) should be in no squad but is in {} ({})".format(veh, icon, reverseClaiming.get(t, "None"), t))
+        #elif t in claimingTypeDict[squad]:
+            #pass
+        #else:
+            #print("{} ({}) should be in {} ({}) but is in {} ({})".format(veh, icon, squad, claimingTypeDict[squad], reverseClaiming.get(t, "None"), t))
+            
     
     lines.extend([
         "",
