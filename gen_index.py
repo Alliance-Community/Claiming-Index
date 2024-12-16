@@ -341,16 +341,24 @@ if __name__ == "__main__":
         lines.append("</tr>")
         t = getVehicleType(veh)
         if squad is not reverseClaiming.get(t, "None"):
+            r = reverseClaiming.get(t, "None")
             if squad == "APC + TANK" or squad == "APC + TANK + CAS":
                 if t == VEHICLE_TYPE_UNKNOWN:
                     pass
                 else:
-                    print("{} ({}) should be in no squad but is in {} ({})".format(veh, icon, reverseClaiming.get(t, "None"), t))
+                    
+                    print("{} ({}) should be removed from {} ({})".format(veh, icon, r, t))
             else:
                 if claimingTypeDict[squad] == []:
-                    print("{} ({}) should be in {} (custom type must be made) but is in {} (it is type {})".format(veh, icon, squad, reverseClaiming.get(t, "None"), t))
+                    if r == "None":
+                        print("{} ({}) should be in {} (custom type must be made)".format(veh, icon, squad))
+                    else:
+                        print("{} ({}) should be in {} (custom type must be made) and removed from {} (it is type {})".format(veh, icon, squad, r, t))
                 else:
-                    print("{} ({}) should be in {} (containing types {}) but is in {} (it is type {})".format(veh, icon, squad, claimingTypeDict[squad], reverseClaiming.get(t, "None"), t))
+                    if r == "None":
+                        print("{} ({}) should be in {} (containing types {})".format(veh, icon, squad, claimingTypeDict[squad]))
+                    else:
+                        print("{} ({}) should be in {} (containing types {}) and removed from {} (it is type {})".format(veh, icon, squad, claimingTypeDict[squad], r, t))
             
     
     lines.extend([
