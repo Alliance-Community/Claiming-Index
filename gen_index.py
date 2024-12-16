@@ -347,7 +347,7 @@ if __name__ == "__main__":
                     pass
                 else:
                     
-                    print("{} ({}) should be removed from {} ({})".format(veh, icon, r, t))
+                    print("{} ({}) should be removed from {} (it is type {})".format(veh, icon, r, t))
             else:
                 if claimingTypeDict[squad] == []:
                     if r == "None":
