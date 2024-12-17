@@ -91,7 +91,7 @@ claimingDict = {
   "ROCKET": [["tec_rocket"]],
   "AAV": [["trk_aa"]],
   "TRANS": [["the_scout", "the_scout_escort"], ["the_light", "the_light_escort"], ["the_medium", "the_medium_escort"], ["the_heavy", "the_heavy_chinook"], ["the_heavy_osprey"]],
-  "CAS": [["jet_1_attack", "jet_1_strikefighter", "jet_1_asf"], ["jet_2_attack", "jet_2_strikefighter", "jet_2_asf", "jet_2_antiship"], ["jet_4_attack", "jet_4_strikefighter", "jet_4_asf"], ["jet_6_attack", "jet_7_attack", "jet_8_attack"], ["jet_10_attack", "jet_10_strikefighter", "jet_10_asf", "jet_10_as"], ["jet_9_attack", "jet_9_strikefighter", "jet_9_asf"], ["jet_11_attack"]],
+  "CAS": [["ahe_scout_50", "ahe_scout_hd", "ahe_scout_hf"], ["ahe_light_50", "ahe_light_hd", "ahe_light_hf"], ["ahe_medium_50", "ahe_medium_hd", "ahe_medium_hf"], ["ahe_heavy", "ahe_heavy_alt"], ["ahe_heavy_hind", "ahe_heavy_hind_alt"], ["jet_1_attack", "jet_1_strikefighter", "jet_1_asf"], ["jet_2_attack", "jet_2_strikefighter", "jet_2_asf", "jet_2_antiship"], ["jet_4_attack", "jet_4_strikefighter", "jet_4_asf"], ["jet_6_attack", "jet_7_attack", "jet_8_attack"], ["jet_10_attack", "jet_10_strikefighter", "jet_10_asf", "jet_10_as"], ["jet_9_attack", "jet_9_strikefighter", "jet_9_asf"], ["jet_11_attack"]],
   "APC + TANK": [["atm_medium", "jep_atgm"]],
   "APC + TANK + CAS": [["aav_light", "aav_medium", "aav_heavy"], ["jep_aa"]],
 }
