@@ -96,6 +96,10 @@ claimingDict = {
   "APC + TANK + CAS": [["aav_light", "aav_medium", "aav_heavy"], ["jep_aa"]],
 }
 
+claimOverrides = {
+    "ger_aav_flak38blitz": "APC + TANK + CAS"
+}
+
 def vehToName(veh):
     vehOrig = veh
     if veh in names_map:
@@ -334,6 +338,8 @@ if __name__ == "__main__":
 
     for name, veh, icon in sortedAssets:
         squad = reverseMap[icon]
+        if veh in claimOverrides:
+            squad = claimOverrides[veh]
         lines.append("<tr>")
         lines.append("<td><img src=\"./vehicles/{}\"></td>".format("mini_" + icon + ".png"))
         lines.append("<td><b>{}</b></td>".format(name))
