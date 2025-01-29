@@ -87,7 +87,7 @@ facTr = {
 claimingDict = {
   "APC": [["apc_light", "apc_medium", "apc_heavy"], ["ifv_light", "ifv_medium", "ifv_heavy"], ["rec_light", "rec_medium", "rec_medium_scorpion", "rec_heavy"]],
   "TANK": [["tnk_light", "tnk_medium", "tnk_heavy"]],
-  "SPG": [["tec_spg"]],
+  "SPG": [["tec_spg", "jep_spg"]],
   "ROCKET": [["tec_rocket"]],
   "AAV": [["trk_aa"]],
   "TRANS": [["the_scout", "the_scout_escort"], ["the_light", "the_light_escort"], ["the_medium", "the_medium_escort"], ["the_heavy", "the_heavy_chinook"], ["the_heavy_osprey"]],
@@ -127,7 +127,7 @@ VEHICLE_TYPE_RECON = 9
 VEHICLE_TYPE_STATIC = VEHICLE_TYPE_UNKNOWN #10
 VEHICLE_TYPE_SOLDIER = VEHICLE_TYPE_UNKNOWN #11
 VEHICLE_TYPE_ASSET = VEHICLE_TYPE_UNKNOWN #12
-VEHICLE_TYPE_SHIP = VEHICLE_TYPE_UNKNOWN #13
+VEHICLE_TYPE_SHIP = 13
 VEHICLE_TYPE_TURBOPROP = 14
 VEHICLE_TYPE_AFV = VEHICLE_TYPE_UNKNOWN #15  # open top shitboxes Armoured Fighting Vehicle
 VEHICLE_TYPE_ALC = VEHICLE_TYPE_UNKNOWN #16  # Armoured Logistics Carrier
